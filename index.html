@@ -14,6 +14,7 @@
 	<body>
     <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;antialias: true;" xr-mode-ui="enabled: true">
 	<a-assets>
+		<a-asset-item id="bowser" src="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"></a-asset-item>
 		<video id="evideo" preload="auto" autoplay="true" loop="true" webkit-playsinline playsinline crossorigin="anonymous">
 		<!-- HEVC video for safari support -->
         <source src="video_hud.mov" type="video/mp4;codecs=hvc1">
@@ -21,7 +22,7 @@
         <source src="video_hud.webm" type="video/webm" />
 	</video>
       	</a-assets>
-        
+        <a-entity gltf-model="#bowser" position="0 0 0" scale="0.2 0.2 0.2"></a-entity>
       	<a-video src="#evideo" width="1" height="1" scale="3 3 3" position="0 0.5 0" rotation="0 0 0"></a-video>
         <a-entity camera look-controls="enabled: false" rotation="0 0 0" orbit-controls="target: 0 0 0; minDistance: 10; maxDistance: 10; initialPosition: 1 2 3; rotateSpeed: 1; autoRotate:true;">
         </a-entity>
@@ -29,4 +30,3 @@
 
 	</body>
 </html>
-
