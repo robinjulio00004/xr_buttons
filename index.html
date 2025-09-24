@@ -9,9 +9,13 @@
     <script src="aframe-v1.6.0.min.js"></script>
     <script src="aframe-ar.js"></script>
 	<script src="orbit-controls.js"></script>	
+	<link rel="stylesheet" href="styles.css">
 	</head>
 		
 	<body>
+	<div class="buttons">
+ 	 <button id="boton" class="button" type="button" onclick="funcion_play()">Reproducir</button>
+	</div>
     <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;antialias: true;" xr-mode-ui="enabled: true">
 	<a-assets>
 		<a-asset-item id="bowser" src="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"></a-asset-item>
@@ -27,7 +31,13 @@
         <a-entity camera look-controls="enabled: false" rotation="0 0 0" orbit-controls="target: 0 0 0; minDistance: 30; maxDistance: 30; initialPosition: 0 0 3; rotateSpeed: 1; autoRotate:true;">
         </a-entity>
     </a-scene>
-
 	</body>
-</html>
+	<script>
+const vdo=document.querySelector('#evideo');
 
+function funcion_play()
+{
+	vdo.play();
+}
+	</script>
+</html>
