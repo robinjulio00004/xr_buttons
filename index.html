@@ -1,5 +1,5 @@
 <!doctype html>
-<!--gestos touch-->
+<!--XR buttons-->
 <html lang="en-US">
 	<head>
 	<meta charset="utf-8"/> 
@@ -15,9 +15,9 @@
     <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;antialias: true;" xr-mode-ui="enabled: true">
 	<a-assets>
         <a-asset-item id="bowser" src="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"></a-asset-item>
-		<video id="evideo" preload="auto" autoplay="true" loop="true" webkit-playsinline playsinline crossorigin="anonymous">
+		<video id="evideo" preload="auto" autoplay="false" loop="true" webkit-playsinline playsinline crossorigin="anonymous">
 		<!-- HEVC video for safari support -->
-        <source src="video_hud.mov" type="video/mp4;codecs=hvc1">
+        <source src="video_hud.mov" type="video/mov;codecs=hvc1">
           	<!-- WEBM video for chrome and firefox -->
         <source src="video_hud.webm" type="video/webm" />
 	</video>
@@ -29,12 +29,13 @@
       	<a-light type="directional" color="white" intensity="0.6" position="0 0 1" light="castShadow:true;"></a-light>
       	<a-light type="directional" color="white" intensity="0.6" position="0 0 -1" light="castShadow:true;"></a-light>
       	<a-light type="directional" color="white" intensity="1.6" position="0 6 0" light="castShadow:true;"></a-light>
-      	<!--<a-entity geometry="primitive: plane; width: 2.5; height: 1.5" material="shader: transparent-video; src: #evideo;" scale="0.24 0.22 0.22" position="0 0 -0.56" rotation="-90 0 0"> 
-		</a-entity>-->
+      	<a-entity geometry="primitive: plane; width: 1; height: 1" material="shader: transparent-video; src: #evideo;" scale="0.22 0.22 0.22" position="0 0 0" rotation="-90 0 0"> 
+		</a-entity>
         <a-entity camera look-controls="enabled: false" orbit-controls="target: 0 0 0; minDistance: 80; maxDistance: 80; initialPosition: 1 2 3; rotateSpeed: 1; autoRotate:true;">
         </a-entity>
     </a-scene>
 
 	</body>
 </html>
+
 
