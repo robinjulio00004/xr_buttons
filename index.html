@@ -11,8 +11,7 @@
 	<script src="orbit-controls.js"></script>	
 	<script src="aframe-transparent-video-shader.umd.js"></script>
 	<link rel="stylesheet" href="styles.css">
-	</head>
-		<script>
+	<script>
 		const vdo=document.querySelector('#evideo');
 		var scene = document.querySelector('a-scene');
 		
@@ -25,6 +24,7 @@
 			vdo.play();
 		}
 	</script>
+	</head>
 	
 	<body>
 	<div class="buttons">
@@ -52,25 +52,14 @@
     </a-scene>
 	</body>
 	<script>
-		const vdo=document.querySelector('#evideo');
+		const vdo1=document.querySelector('#evideo');
 		AFRAME.registerComponent('cursor-listener', {
 			init:function(){
 				this.el.addEventListener('click',function(){
-				vdo.play();
+				vdo1.play();
 			});
 			}
 		});
-		
-		/*var scene = document.querySelector('a-scene');
-		
-		if(scene.hasLoaded){
-			play();
-		}else{
-			scene.addEventListener('loaded',play);
-		}
-		function play(){
-			vdo.play();
-		}*/
 
 /*document.querySelector('a-scene').addEventListener('loaded',function(){ vdo.play(); });*/
 /*document.querySelector('a-scene').addEventListener('loaded',()=>{ vdo.play() });*/
