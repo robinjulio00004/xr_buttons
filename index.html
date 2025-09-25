@@ -6,13 +6,26 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="aframe-v1.6.0.min.js"></script>
+    <script src="aframe-v1.7.1.min.js"></script>
     <script src="aframe-ar.js"></script>
 	<script src="orbit-controls.js"></script>	
 	<script src="aframe-transparent-video-shader.umd.js"></script>
 	<link rel="stylesheet" href="styles.css">
 	</head>
+		<script>
+		const vdo=document.querySelector('#evideo');
+		var scene = document.querySelector('a-scene');
 		
+		if(scene.hasLoaded){
+			vdo.play();
+		}else{
+			scene.addEventListener('loaded',play);
+		}
+		function play(){
+			vdo.play();
+		}
+	</script>
+	
 	<body>
 	<div class="buttons">
  	 <button id="boton" class="button" type="button" onclick="funcion_play()">Reproducir</button>
@@ -28,7 +41,7 @@
       	</a-assets>
       	<a-video src="#evideo" width="1" height="1" scale="3 3 3" position="0 0 0" cursor-listener></a-video>
 		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="side: double;shader: transparent-video; src: #evideo" position="3 1 0"></a-entity>
-		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="side: double;shader: transparent-video; src: #evideo" position="3 1 0" rotation="0 0 180"></a-entity>
+		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="side: double;shader: transparent-video; src: #evideo" position="3 0 0" rotation="0 0 180"></a-entity>
 		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="shader: transparent-video; src: #evideo" position="-3 1 0"></a-entity>
 		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="shader: transparent-video; src: #evideo" position="-3 1 0" rotation="0 0 180"></a-entity>
 		
@@ -67,4 +80,3 @@
 }*/
 	</script>
 </html>
-
