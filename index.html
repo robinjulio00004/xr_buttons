@@ -37,11 +37,22 @@
     </a-scene>
 	</body>
 	<script>
-const vdo=document.querySelector('#evideo');
+		const vdo=document.querySelector('#evideo');
+		var scene = document.querySelector('a-scene');
+		
+		if(scene.hasLoaded){
+			play();
+		}else{
+			scene.addEventListener('loaded',play);
+		}
+		function play(){
+			vdo.play();
+		}
 
-function funcion_play()
+
+/*function funcion_play()
 {
 	vdo.play();
-}
+}*/
 	</script>
 </html>
