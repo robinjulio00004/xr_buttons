@@ -17,7 +17,7 @@
 	<div class="buttons">
  	 <button id="boton" class="button" type="button" onclick="funcion_play()">Reproducir</button>
 	</div>
-    <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;antialias: true;" xr-mode-ui="enabled: true">
+    <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;antialias: true;" xr-mode-ui="enabled: true" cursor-listener>
 	<a-assets>
 		<video id="evideo" preload="auto" autoplay="true" loop="true" webkit-playsinline playsinline crossorigin="anonymous">
 		<!-- HEVC video for safari support -->
@@ -32,12 +32,22 @@
 		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="shader: transparent-video; src: #evideo" position="-3 1 0"></a-entity>
 		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="shader: transparent-video; src: #evideo" position="-3 1 0" rotation="0 0 180"></a-entity>
 		
-        <a-entity camera look-controls="enabled: false" orbit-controls="target: 0 0 0; minDistance: 30; maxDistance: 30; initialPosition: 0 0 3; rotateSpeed: 1; autoRotate:true"></a-entity>
+        <a-entity camera look-controls="enabled: false" orbit-controls="target: 0 0 0; minDistance: 30; maxDistance: 30; initialPosition: 0 0 3; rotateSpeed: 1; autoRotate:true">
+		</a-entity>
+		<a-entity cursor="rayOrigin:mouse"></a-entity>
 		<!--<a-entity camera look-controls="enabled: true" position=" 0 0 3" ></a-entity>-->
     </a-scene>
 	</body>
 	<script>
 		const vdo=document.querySelector('#evideo');
+		AFRAME.registerComponent('cursor-listener', {
+			init:function(){
+				this.el.addEventListener('click',function(){
+				vdo.play();
+			});
+			}
+		});
+		
 		/*var scene = document.querySelector('a-scene');
 		
 		if(scene.hasLoaded){
@@ -49,7 +59,7 @@
 			vdo.play();
 		}*/
 
-document.querySelector('a-scene').addEventListener('loaded',function(){ vdo.play(); });
+/*document.querySelector('a-scene').addEventListener('loaded',function(){ vdo.play(); });*/
 /*document.querySelector('a-scene').addEventListener('loaded',()=>{ vdo.play() });*/
 /*function funcion_play()
 {
@@ -57,4 +67,3 @@ document.querySelector('a-scene').addEventListener('loaded',function(){ vdo.play
 }*/
 	</script>
 </html>
-
