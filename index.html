@@ -28,6 +28,8 @@
       	</a-assets>
         <a-entity gltf-model="#bowser" position="2 0 0" scale="0.2 0.2 0.2"></a-entity>
       	<a-video src="#evideo" width="1" height="1" scale="3 3 3" position="-2 1 0" rotation="0 0 0"></a-video>
+		<a-entity geometry="primitive: plane; width: 1; height: 1" material="src: #evideo;" scale="0.2 0.2 0.2" position="-2 0 0" rotation="0 0 0"> 
+		</a-entity>
         <a-entity camera look-controls="enabled: false" rotation="0 0 0" orbit-controls="target: 0 0 0; minDistance: 30; maxDistance: 30; initialPosition: 0 0 3; rotateSpeed: 1; autoRotate:true;">
         </a-entity>
     </a-scene>
