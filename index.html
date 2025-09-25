@@ -10,14 +10,10 @@
     <script src="aframe-ar.js"></script>
 	<script src="orbit-controls.js"></script>	
 	<script src="aframe-transparent-video-shader.umd.js"></script>
-	<link rel="stylesheet" href="styles.css">
 	
 	</head>
 	
 	<body>
-	<div class="buttons">
- 	 <button id="boton" class="button" type="button" onclick="funcion_play()">Reproducir</button>
-	</div>
     <a-scene arjs embedded renderer="logarithmicDepthBuffer: true;antialias: true;" xr-mode-ui="enabled: true" cursor-listener>
 	<a-assets>
 		<video id="evideo" preload="auto" autoplay="true" loop="true" webkit-playsinline playsinline crossorigin="anonymous">
