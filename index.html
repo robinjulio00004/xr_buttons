@@ -11,19 +11,7 @@
 	<script src="orbit-controls.js"></script>	
 	<script src="aframe-transparent-video-shader.umd.js"></script>
 	<link rel="stylesheet" href="styles.css">
-	<script>
-		const vdo=document.querySelector('#evideo');
-		var scene = document.querySelector('a-scene');
-		
-		if(scene.hasLoaded){
-			vdo.play();
-		}else{
-			scene.addEventListener('loaded',play);
-		}
-		function play(){
-			vdo.play();
-		}
-	</script>
+	
 	</head>
 	
 	<body>
@@ -41,9 +29,9 @@
       	</a-assets>
       	<a-video src="#evideo" width="1" height="1" scale="3 3 3" position="0 0 0" cursor-listener></a-video>
 		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="side: double;shader: transparent-video; src: #evideo" position="3 1 0"></a-entity>
-		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="side: double;shader: transparent-video; src: #evideo" position="3 0 0" rotation="0 0 180"></a-entity>
+		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="shader: transparent-video; src: #evideo" position="3 1 0" rotation="0 0 180"></a-entity>
 		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="shader: transparent-video; src: #evideo" position="-3 1 0"></a-entity>
-		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="shader: transparent-video; src: #evideo" position="-3 1 0" rotation="0 0 180"></a-entity>
+		<a-entity geometry="primitive: sphere; width: 1; height: 1" material="side: double;shader: transparent-video; src: #evideo" position="-3 1 0" rotation="0 0 180"></a-entity>
 		
         <a-entity camera look-controls="enabled: false" orbit-controls="target: 0 0 0; minDistance: 30; maxDistance: 30; initialPosition: 0 0 3; rotateSpeed: 1; autoRotate:true">
 		</a-entity>
@@ -52,20 +40,14 @@
     </a-scene>
 	</body>
 	<script>
-		const vdo1=document.querySelector('#evideo');
+		const vdo=document.querySelector('#evideo');
 		AFRAME.registerComponent('cursor-listener', {
 			init:function(){
 				this.el.addEventListener('click',function(){
-				vdo1.play();
+				vdo.play();
 			});
 			}
 		});
 
-/*document.querySelector('a-scene').addEventListener('loaded',function(){ vdo.play(); });*/
-/*document.querySelector('a-scene').addEventListener('loaded',()=>{ vdo.play() });*/
-/*function funcion_play()
-{
-	vdo.play();
-}*/
 	</script>
 </html>
